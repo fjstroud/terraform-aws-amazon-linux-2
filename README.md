@@ -4,41 +4,14 @@ Terraform module to create Security Group and Amazon Linux 2 EC2 instance
 
 ## Usage with minimal customisation
 
-This will generate 3 characters random string and append it to the IAM role name and instance profile name.
-IAM role name = "ssm-role-nnn"
-IAM instance profile name = "ssm-instance-profile-nnn"
-
 ```hcl
-module "ssm_instance_profile" {
-  source  = "bayupw/ssm-instance-profile/aws"
-  version = "1.0.0"
-}
-
-resource "aws_instance" "ec2_instance" {
-  # ...
-  iam_instance_profile = module.ssm_instance_profile.aws_iam_instance_profile
-  # ...
-}
-
-```
-
-## Usage with name customisation
-
-```hcl
-module "ssm_instance_profile" {
-  source  = "bayupw/ssm-instance-profile/aws"
+module "amazon_linux_2" {
+  source  = "bayupw/amazon-linux-2/aws"
   version = "1.0.0"
 
-  random_suffix = true
-  random_string_length = 4
-  ssm_instance_role_name = "my-ssm-role"
-  ssm_instance_profile_name = "my-ssm-instance-profile
-}
-
-resource "aws_instance" "ec2_instance" {
-  # ...
-  iam_instance_profile = module.ssm_instance_profile.aws_iam_instance_profile
-  # ...
+  vpc_id = "vpc-0a1b2c3d4e"
+  subnet_id = "subnet-0a1b2c3d4e"
+  key_name = "ec2-keypair"
 }
 ```
 
