@@ -68,7 +68,7 @@ variable "iam_instance_profile" {
 variable "associate_public_ip_address" {
   description = "Whether to associate a public IP address with an instance in a VPC"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "enable_password_authentication" {
