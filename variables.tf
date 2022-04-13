@@ -71,6 +71,12 @@ variable "associate_public_ip_address" {
   default     = false
 }
 
+variable "private_ip" {
+  description = "Private IP address to associate with the instance in a VPC"
+  type        = string
+  default     = null
+}
+
 variable "enable_password_authentication" {
   description = "Set to true to enable password authentication"
   type        = bool

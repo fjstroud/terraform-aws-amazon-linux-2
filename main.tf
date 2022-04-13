@@ -66,6 +66,7 @@ resource "aws_instance" "this" {
   subnet_id                   = var.subnet_id
   vpc_security_group_ids      = [aws_security_group.this.id]
   associate_public_ip_address = var.associate_public_ip_address
+  private_ip                  = var.private_ip
   iam_instance_profile        = var.iam_instance_profile
 
   user_data = templatefile("${path.module}/bootstrap.sh",
