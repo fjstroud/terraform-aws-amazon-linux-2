@@ -6,7 +6,7 @@ output "aws_security_group" {
 output "aws_instance" {
   description = "The created AWS EC2 instance aws_instance as an object with all of it's attributes"
   value       = aws_instance.this
-  sensitive   = true
+  sensitive   = false
 }
 
 output "instance_password" {
