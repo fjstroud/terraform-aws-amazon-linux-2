@@ -71,6 +71,7 @@ resource "aws_instance" "this" {
 
   user_data = templatefile("${path.module}/bootstrap.sh",
     {
+      "hostname" = var.instance_hostname
       "password_bootstrap" = local.password_bootstrap
       "httpd_bootstrap"    = local.httpd_bootstrap
     }

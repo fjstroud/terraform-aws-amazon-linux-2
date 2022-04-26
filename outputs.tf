@@ -14,3 +14,9 @@ output "instance_password" {
   value       = local.instance_password
   sensitive   = true
 }
+
+output "my_public_ip" {
+  description = "My public IP"
+  value       = local.my_public_ip
+  sensitive   = true
+}  
