@@ -23,7 +23,7 @@ output "my_public_ip" {
 
 output "my_private_ip" {
   description = "My private IP"
-  value       = local.private_ip
+  value       = data.private_ip
   sensitive   = true
 }  
 
