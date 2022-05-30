@@ -20,3 +20,8 @@ output "my_public_ip" {
   value       = local.my_public_ip
   sensitive   = true
 }  
+
+
+output "private_ip" {
+  value = aws.instance.private_ip
+}
