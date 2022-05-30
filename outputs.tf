@@ -21,11 +21,9 @@ output "my_public_ip" {
   sensitive   = true
 }  
 
-/*
 output "my_private_ip" {
   description = "My private IP"
   value       = local.private_ip
   sensitive   = true
 }  
 
-*/
